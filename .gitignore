@@ -45,3 +45,5 @@ articles.csv
 fakedata/
 .cache-loader
 test_in_pay_environment.sh
+
+.static
