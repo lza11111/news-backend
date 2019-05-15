@@ -1,0 +1,47 @@
+.qiniu_pythonsdk_hostscache.json
+.DS_Store
+db.sqlite3
+*.log
+*.pot
+*.pyc
+.idea
+.vagrant
+local_settings.py
+.venv
+title_pic
+django-summernote
+avatars
+media
+staticfiles
+*~
+celerybeat-schedule
+celerybeat.pid
+
+# node
+node_modules
+jspm_packages
+package-lock.json
+npm-debug.log*
+static/react/*
+static/images/*
+templates/pages/base.html
+celerybeat-schedule.*
+/.vscode
+
+javascripts/package.json
+
+# sass cache
+*.scssc
+venv/
+*.css.map
+
+articles.csv
+
+/javascripts/raven.config.js
+
+*.css.map
+
+# add fake data
+fakedata/
+.cache-loader
+test_in_pay_environment.sh
