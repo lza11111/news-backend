@@ -25,7 +25,7 @@ SECRET_KEY = 'nfwk+qx*z7z*z6i_7ajw(_+m)s2)6hgotw#!0@=6*bg3!qgel!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lza11111.com','localhost','www.lza11111.com']
 
 AUTH_USER_MODEL = 'users.User'
 
