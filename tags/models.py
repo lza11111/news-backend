@@ -1,8 +1,5 @@
 from django.db import models
 
-from .constants import Type, TYPE_CHOICES
-
-
 class Tag(models.Model):
     name = models.CharField(max_length=200)
     unique_name = models.SlugField(max_length=200, unique=True)
