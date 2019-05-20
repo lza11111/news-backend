@@ -100,3 +100,16 @@ class UserViewSet(viewsets.ModelViewSet):
         django_login(request, new_user)
 
         return Response({u'message': u'注册成功'}, status=status.HTTP_201_CREATED)
+    
+    @list_route(methods=['POST'], permission_classes=[permissions.IsAuthenticated])
+    def nickname(self, request):
+        user = request.user
+        nickname = request.data.get('nickname')
+
+        if not nickname or len(nickname) <= 3:
+            return Response({u'message': u'昵称过短，请重新输入！'}, status=status.HTTP_400_BAD_REQUEST)
+        
+        user.nickname = nickname
+        user.save()
+
+        return Response({u'message': u'修改成功'}, status=status.HTTP_200_OK)

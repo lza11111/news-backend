@@ -8,6 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
             'id',
             'last_login',
             'username',
+            'nickname',
         )
 
 class LoginSerializer(serializers.Serializer):
