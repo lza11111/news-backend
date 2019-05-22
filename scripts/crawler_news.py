@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # encoding:utf-8
  
 import json, urllib.request
@@ -23,7 +23,7 @@ def run(*args):
         url_values = urllib.parse.urlencode(data)
         url = "https://api.jisuapi.com/news/get" + "?" + url_values
         result = urllib.request.urlopen(url)
-        jsonarr = json.loads(result.read().decode())
+        jsonarr = json.loads(result.read())
 
         if jsonarr["status"] != 0:
             print(jsonarr["msg"])
