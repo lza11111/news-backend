@@ -33,7 +33,7 @@ def run(*args):
             exit()
         result = jsonarr["result"]
         
-        print(result["channel"],result["num"])
+        # print(result["channel"],result["num"])
         tag = Tag.objects.filter(name=data["channel"])
         for val in result["list"]:
             new = News
