@@ -20,7 +20,7 @@ def run(*args):
         url_values = urllib.parse.urlencode(data)
         url = "https://api.jisuapi.com/news/get" + "?" + url_values
         result = urllib.request.urlopen(url)
-        jsonarr = json.loads(result.read())
+        jsonarr = json.loads(result.read().decode())
 
         if jsonarr["status"] != 0:
             print(jsonarr["msg"])
