@@ -7,7 +7,10 @@ from bs4 import BeautifulSoup
 
 from news.models import News
 from tags.models import Tag
+import sys
 
+reload(sys) 
+sys.setdefaultencoding('utf8')
 
 def run(*args):
     data = {}
