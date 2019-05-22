@@ -12,7 +12,7 @@ from tags.models import Tag
 def run(*args):
     data = {}
     data["appkey"] = "055412fc5fee23e4"
-    data["channel"] = args[0]  #新闻频道(头条,财经,体育,娱乐,军事,教育,科技,NBA,股票,星座,女性,健康,育儿)
+    data["channel"] = args[0].encode('utf-8')  #新闻频道(头条,财经,体育,娱乐,军事,教育,科技,NBA,股票,星座,女性,健康,育儿)
     data["num"] = 40
     for i in range(0, 200, 40):
         data["num"] = 40
