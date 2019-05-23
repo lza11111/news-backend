@@ -30,11 +30,13 @@ class NewsViewSet(viewsets.ModelViewSet):
 
         elif type == 'rcmd':
             if not user.is_authenticated or user.tags.count() == 0:
-                queryset = queryset.order_by('-like_count')
+                queryset = random.sample(list(queryset), min(queryset.count(), 10))
             else:
                 queryset = queryset.filter(tags__in=user.tags.all())
+                queryset = random.sample(list(queryset), min(queryset.count(), 10))
         elif type:
             queryset = queryset.filter(tags__unique_name=type)
+            queryset = random.sample(list(queryset), min(queryset.count(), 10))
 
         return queryset
 
