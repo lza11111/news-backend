@@ -20,6 +20,7 @@ from rest_framework import routers
 
 from news.views import NewsViewSet
 from users.views import UserViewSet
+from config.view import hello
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -28,5 +29,6 @@ router.register(r'news', NewsViewSet, base_name='news')
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls'))
+    url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'^$', hello)
 ]
