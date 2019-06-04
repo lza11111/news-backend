@@ -13,9 +13,9 @@ def run(*args):
     data = {}
     arg_list = args[0].split(',')
     data["appkey"] = "055412fc5fee23e4"
-    print('目标爬取 ' + arg_list[0].decode() + ' 分类下的 ' + arg_list[1].decode() +' 条新闻...')
+    print('目标爬取 ' + arg_list[0].encode('utf-8') + ' 分类下的 ' + arg_list[1].encode('utf-8') +' 条新闻...')
     tag = Tag.objects.get(unique_name=arg_list[0])
-    print('正在爬取 ' + tag.name.decode() +' 分类下的新闻.......')
+    print('正在爬取 ' + tag.name.encode('utf-8') +' 分类下的新闻.......')
     count = 0
     data["channel"] = tag.name #新闻频道(头条,财经,体育,娱乐,军事,教育,科技,NBA,股票,星座,女性,健康,育儿)
     data["num"] = min(int(arg_list[1]),40)
