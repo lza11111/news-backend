@@ -42,6 +42,8 @@ def run(*args):
             img = None
             if len(imgs) > 0:
                 img = imgs[0].get('src')
+            else 
+                continue
             content = '![](%s)\n%s' % (img, soup.get_text())
             news = News.objects.create(title=val["title"], content=content, cover_image=img)
             news.tags.set(tag)
