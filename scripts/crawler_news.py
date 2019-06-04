@@ -11,13 +11,14 @@ from tags.models import Tag
 
 def run(*args):
     data = {}
+    arg_list = args[0].split(',')
     data["appkey"] = "055412fc5fee23e4"
-    print('目标爬取 ' + args[0] + ' 分类下的 ' + int(args[1]) +' 条新闻...')
-    tag = Tag.objects.get(unique_name=args[0])
+    print('目标爬取 ' + arg_list[0] + ' 分类下的 ' + int(arg_list[1]) +' 条新闻...')
+    tag = Tag.objects.get(unique_name=arg_list[0])
     print('正在爬取 ' + tag.name +' 分类下的新闻.......')
     count = 0
     data["channel"] = tag.name #新闻频道(头条,财经,体育,娱乐,军事,教育,科技,NBA,股票,星座,女性,健康,育儿)
-    data["num"] = min(int(args[1]),40)
+    data["num"] = min(int(arg_list[1]),40)
 
     # url_values = urllib.parse.urlencode(data)
     # url = "https://api.jisuapi.com/news/get" + "?" + url_values
@@ -25,7 +26,7 @@ def run(*args):
     # jsonarr = json.loads(result.read().decode(), encoding="utf-8")
     # print(jsonarr)
 
-    for i in range(0, int(args[1]), 40):
+    for i in range(0, int(arg_list[1]), 40):
         data['start'] = i
         url_values = urllib.parse.urlencode(data)
         url = "https://api.jisuapi.com/news/get" + "?" + url_values
