@@ -14,7 +14,7 @@ def run(*args):
     data["appkey"] = "055412fc5fee23e4"
     tag = Tag.objects.get(unique_name=args[0])
     data["channel"] = tag.name #新闻频道(头条,财经,体育,娱乐,军事,教育,科技,NBA,股票,星座,女性,健康,育儿)
-    data["num"] = 40
+    data["num"] = min(int(args[1]),40)
 
     # url_values = urllib.parse.urlencode(data)
     # url = "https://api.jisuapi.com/news/get" + "?" + url_values
