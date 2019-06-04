@@ -13,7 +13,7 @@ def run(*args):
     data = {}
     arg_list = args[0].split(',')
     data["appkey"] = "055412fc5fee23e4"
-    print('目标爬取 ' + arg_list[0] + ' 分类下的 ' + int(arg_list[1]) +' 条新闻...')
+    print('目标爬取 ' + arg_list[0] + ' 分类下的 ' + arg_list[1] +' 条新闻...')
     tag = Tag.objects.get(unique_name=arg_list[0])
     print('正在爬取 ' + tag.name +' 分类下的新闻.......')
     count = 0
