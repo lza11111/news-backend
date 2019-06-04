@@ -22,7 +22,7 @@ def run(*args):
     # jsonarr = json.loads(result.read().decode(), encoding="utf-8")
     # print(jsonarr)
 
-    for i in range(0, 200, 40):
+    for i in range(0, int(args[1]), 40):
         data['start'] = i
         url_values = urllib.parse.urlencode(data)
         url = "https://api.jisuapi.com/news/get" + "?" + url_values
