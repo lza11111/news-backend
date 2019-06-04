@@ -12,6 +12,7 @@ from tags.models import Tag
 def run(*args):
     data = {}
     data["appkey"] = "055412fc5fee23e4"
+    print('目标爬取 ' + args[0] + ' 分类下的 ' + int(args[1]) +' 条新闻...')
     tag = Tag.objects.get(unique_name=args[0])
     print('正在爬取 ' + tag.name +' 分类下的新闻.......')
     count = 0
