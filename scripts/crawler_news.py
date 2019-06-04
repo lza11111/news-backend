@@ -13,6 +13,8 @@ def run(*args):
     data = {}
     data["appkey"] = "055412fc5fee23e4"
     tag = Tag.objects.get(unique_name=args[0])
+    print('正在爬取 ' + tag.name +' 分类下的新闻.......')
+    count = 0
     data["channel"] = tag.name #新闻频道(头条,财经,体育,娱乐,军事,教育,科技,NBA,股票,星座,女性,健康,育儿)
     data["num"] = min(int(args[1]),40)
 
@@ -47,3 +49,6 @@ def run(*args):
             content = '![](%s)\n%s' % (img, soup.get_text())
             news = News.objects.create(title=val["title"], content=content, cover_image=img)
             news.tags.set(tag)
+            count += 1
+    
+    print('成功爬取符合条件的 ' + str(count) + ' 条新闻。')
