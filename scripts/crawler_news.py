@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# encoding:utf-8
+# -*- coding: utf-8 -*-
  
 import json, urllib.request
 
@@ -12,7 +12,7 @@ from tags.models import Tag
 def run(*args):
     data = {}
     arg_list = args[0].split(',')
-    data["appkey"] = "055412fc5fee23e4"
+    data["appkey"] = "d952cc6f7f38503b"
     print('目标爬取 ' + arg_list[0].encode('utf-8').decode() + ' 分类下的 ' + arg_list[1].encode('utf-8').decode() +' 条新闻...')
     tag = Tag.objects.get(unique_name=arg_list[0])
     print('正在爬取 ' + tag.name.encode('utf-8').decode() +' 分类下的新闻.......')
