@@ -53,4 +53,4 @@ def run(*args):
             news.tags.set(tag)
             count += 1
     
-    print('成功爬取符合条件的 ' + str(count).decode() + ' 条新闻。')
+    print('成功爬取符合条件的 ' + str(count) + ' 条新闻。')
