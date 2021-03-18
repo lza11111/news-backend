@@ -1,6 +1,6 @@
 beautifulsoup4==4.7.1
 bs4==0.0.1
-Django==2.2.1
+Django==2.2.18
 django-extensions==2.1.7
 djangorestframework==3.9.4
 pytz==2019.1
